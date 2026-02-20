@@ -15,7 +15,7 @@ const signInSchema = z.object({
 
 type SignInFormValues = z.infer<typeof signInSchema>;
 
-export function SignInForm({
+export function SigninForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
