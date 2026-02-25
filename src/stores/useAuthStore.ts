@@ -42,4 +42,15 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       toast.error("Đăng nhập không thành công!");
     }
   },
+
+  signOut: async () => {
+    try {
+      get().clearState();
+      await authService.signOut();
+      toast.success("Logout thành công!");
+    } catch (error) {
+      console.error(error);
+      toast.error("Lỗi xảy ra khi logout. Hãy thử lại");
+    }
+  },
 }));
