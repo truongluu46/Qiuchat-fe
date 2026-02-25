@@ -24,4 +24,8 @@ export const authService = {
     );
     return res.data; // access token
   },
+
+  signOut: async () => {
+    return api.post("/auth/signout", {}, { withCredentials: true });
+  },
 };

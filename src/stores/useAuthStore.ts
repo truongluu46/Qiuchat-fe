@@ -8,6 +8,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   loading: false,
 
+  clearState: () => {
+    set({ accessToken: null, user: null, loading: false }); //hàm này tái sử dụng nhiều lần khi logout hoặc token hết hạn
+  },
+
   signUp: async (username, password, email, firstName, lastName) => {
     try {
       set({ loading: true });
